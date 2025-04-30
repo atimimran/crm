@@ -21,7 +21,7 @@ import UploadedVideoSuccessfullyModalPopup from "./modal/UploadedVideoSuccessful
 import EditVideoModalPopup from "./modal/EditVideoModalPopup.jsx";
 
 function App() {
-  console.log("frontendddd")
+  console.log("frontenddddd")
   
   return (
 
