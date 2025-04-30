@@ -1,0 +1,45 @@
+/* @import "tailwindcss/preflight"; */
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@layer components {
+  .btn-signup {
+    @apply ml-4 bg-white text-black cursor-pointer font-bold px-4 py-2;
+    box-shadow: 10px 8px 0px 0px #5c5c0a;
+  }
+  .heading-title {
+    @apply text-black font-bold mb-1;
+  }
+  .heading-two {
+    @apply text-white font-bold mb-1;
+  }
+  .p {
+    @apply text-gray-400 mt-2 text-sm;
+  }
+  .plan-btn {
+   
+    background-color: #5c5c0a;
+    color: white;
+    padding:  15px 20px ;
+    box-shadow: 6px 8px 0px 0px #949403;
+  }
+  .bg {
+    background-color: #949403;
+    }
+  .bg-dark {
+    background-color: #5c5c0a;
+    }
+  
+  .boder{
+      border-color: #5c5c0a;
+    }
+  .hov-bg:hover{
+    background-color: #5c5c0a;
+  }
+  .active{
+    background-color: #5c5c0a;
+  }
+  .text{
+    color: #5c5c0a;
+  }
+}
