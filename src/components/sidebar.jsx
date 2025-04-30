@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   FiHome,
   FiSettings,
@@ -33,16 +34,16 @@ export const Sidebar = () => {
 
          
           <div className="flex md:flex-col gap-2 md:gap-6 mt-8 md:mt-6">
-            <SidebarItem icon={<FiHome />} label="Home" isOpen={isOpen} />
-            <SidebarItem icon={<FiClock />} label="History" isOpen={isOpen} />
-            <SidebarItem icon={<FiFolder />} label="Collections" isOpen={isOpen} />
-            <SidebarItem icon={<FiUsers />} label="Subscribers" isOpen={isOpen} />
+            <SidebarItem icon={<FiHome />} label="Home" isOpen={isOpen} to="/videodetail" />
+            <SidebarItem icon={<FiClock />} label="History" isOpen={isOpen} to="/" />
+            <SidebarItem icon={<FiFolder />} label="Collections" isOpen={isOpen} to="/mychannelemptyvideopage" />
+            <SidebarItem icon={<FiUsers />} label="Subscribers" isOpen={isOpen} to="/" />
           </div>
 
          
           <div className="md:flex md:flex-col gap-2 mt-auto mb-4">
             <SidebarButton icon={<FiHelpCircle />} label="Support" isOpen={isOpen} />
-            <SidebarButton icon={<FiSettings />} label="Setting" isOpen={isOpen} />
+            <SidebarButton icon={<FiSettings />} label="Setting" isOpen={isOpen} to="/editpersonalinfopage" />
           </div>
         </div>
       </div>
@@ -59,25 +60,31 @@ export const Sidebar = () => {
 };
 
 
-const SidebarItem = ({ icon, label, isOpen }) => {
+const SidebarItem = ({ icon, label, isOpen ,to }) => {
   return (
-    <div className="flex items-center md:justify-center   lg:justify-start gap-3 border boder  p-2 cursor-pointer hov-bg transition-all duration-200">
+    <Link
+      to={to}
+      className="flex items-center md:justify-center lg:justify-start gap-3 border p-2 cursor-pointer hov-bg transition-all duration-200"
+    >
       <span className="text-xl">{icon}</span>
       <span
-        className={`transition-all duration-300   ${
+        className={`transition-all duration-300 ${
           isOpen ? "opacity-100 max-w-xs ml-1" : "opacity-0 max-w-0 ml-0"
         } hidden md:inline`}
       >
         {label}
       </span>
-    </div>
+    </Link>
   );
 };
 
 
-const SidebarButton = ({ icon, label, isOpen }) => {
+const SidebarButton = ({ icon, label, isOpen,to }) => {
   return (
-    <button className="flex items-center gap-2 border boder  hov-bg px-4 py-2">
+    <Link to={to}
+    className="flex items-center md:justify-center lg:justify-start gap-3 border p-2 cursor-pointer hov-bg transition-all duration-200"
+    >
+    <button className="flex items-center gap-2  boder  hov-bg px-4 py-2">
       <span className="text-xl">{icon}</span>
       <span
         className={`transition-all duration-300  ${
@@ -87,6 +94,7 @@ const SidebarButton = ({ icon, label, isOpen }) => {
         {label}
       </span>
     </button>
+    </Link>
   );
 };
 
